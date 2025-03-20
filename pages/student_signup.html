@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration - College Buzz</title>
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="css/student_signup.css" />
+  </head>
+  <body>
+    <main class="student-registration">
+      <div class="div">
+        <h1 class="text-wrapper">College Buzz</h1>
+        <section class="frame">
+          <div class="frame-2">
+            <div class="frame-3">
+              <div class="upper-section">
+                <header class="login-text">
+                  <p class="p">Just some details to get you in!</p>
+                </header>
+                <!-- Added id="credentials" to the form -->
+                <form id="credentials" class="credentials">
+                  <div class="div-wrapper">
+                    <label for="username" class="text-wrapper-3">Username</label>
+                    <input type="text" id="username" name="username" required />
+                  </div>
+                  <div class="div-wrapper">
+                    <label for="email-phone" class="text-wrapper-3">Email / Phone</label>
+                    <input type="text" id="email-phone" name="email-phone" required />
+                  </div>
+                  <div class="password-rem">
+                    <div class="div-wrapper">
+                      <label for="password" class="text-wrapper-3">Password</label>
+                      <input type="password" id="password" name="password" required />
+                    </div>
+                    <input
+                      class="password"
+                      placeholder="Confirm Password"
+                      type="password"
+                      id="confirm-password"
+                      name="confirm-password"
+                      required
+                    />
+                  </div>
+                  <div class="login-bt-fp">
+                    <button type="submit" class="login"><span class="text-wrapper-4">Signup</span></button>
+                  </div>
+                </form>
+              </div>
+              <div class="other-logins">
+                <div class="or">
+                  <hr class="line" />
+                  <span class="text-wrapper-5">Or</span>
+                  <hr class="line" />
+                </div>
+                <div class="frame-4">
+                  <a href="#" aria-label="Sign up with Google">
+                    <img class="img" src="img/devicon-google.svg" alt="Google logo" />
+                  </a>
+                  <a href="#" aria-label="Sign up with Facebook">
+                    <img class="img" src="img/logos-facebook.svg" alt="Facebook logo" />
+                  </a>
+                  <a href="#" aria-label="Sign up with GitHub">
+                    <img class="img" src="img/bi-github.svg" alt="GitHub logo" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="frame-5">
+              <a href="student_login.html" class="text-wrapper-6">Already Registered? Login</a>
+              <nav class="customer-care">
+                <div class="frame-6"><a href="#" class="text-wrapper-7">Terms &amp; Conditions</a></div>
+                <div class="frame-6"><a href="#" class="text-wrapper-7">Support</a></div>
+                <div class="frame-6"><a href="#" class="text-wrapper-7">Customer Care</a></div>
+              </nav>
+            </div>
+          </div>
+        </section>
+        <h2 class="text-wrapper-8">Student signup</h2>
+      </div>
+    </main>
+
+    <script>
+      document.getElementById("credentials").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevents actual form submission
+        console.log("Form submitted");
+        // Redirect to student login page after successful submission
+        window.location.href = "student_login.html";
+      });
+    </script>
+
+  </body>
+</html>

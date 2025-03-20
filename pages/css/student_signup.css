@@ -1,0 +1,410 @@
+.student-registration {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.student-registration .div {
+  background-color: #ffffff;
+  width: 990px;
+  height: 1384px;
+  position: relative;
+}
+
+.student-registration .text-wrapper {
+  position: absolute;
+  top: 91px;
+  left: 60px;
+  font-family: "Outfit-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 46.8px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.student-registration .frame {
+  position: absolute;
+  width: 463px;
+  height: 766px;
+  top: 324px;
+  left: 264px;
+  border-radius: 19.21px;
+  overflow: hidden;
+  border: none;
+  box-shadow: -7.68px 3.84px 4.8px #0000003d;
+  backdrop-filter: blur(25.45px) brightness(100%);
+  -webkit-backdrop-filter: blur(25.45px) brightness(100%);
+  background: linear-gradient(
+      321deg,
+      rgba(191, 191, 191, 0.06) 0%,
+      rgba(0, 0, 0, 0) 100%
+    ), linear-gradient(0deg, rgba(0, 0, 0, 0.14) 0%, rgba(0, 0, 0, 0.14) 100%);
+}
+
+.student-registration .frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 0.96px;
+  border-radius: 19.21px;
+  background: linear-gradient(
+    318deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.student-registration .frame-2 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50.89px;
+  position: relative;
+  top: 93px;
+  left: 38px;
+}
+
+.student-registration .frame-3 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15.36px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.student-registration .upper-section {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13.44px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.student-registration .login-text {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.student-registration .text-wrapper-2 {
+  position: relative;
+  width: fit-content;
+  margin-top: -0.96px;
+  font-family: "Noto Sans-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 34.6px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.student-registration .p {
+  position: relative;
+  width: fit-content;
+  font-family: "Noto Sans-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 15.4px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.student-registration .credentials {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24.01px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.student-registration .div-wrapper {
+  display: flex;
+  width: 384.1px;
+  align-items: center;
+  gap: 9.6px;
+  padding: 13.44px 15.36px;
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: 11.52px;
+  border: 0.96px solid;
+  border-color: #000000;
+}
+
+.student-registration .text-wrapper-3 {
+  position: relative;
+  width: fit-content;
+  margin-top: -0.96px;
+  font-family: "Noto Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 19.2px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.student-registration .password-rem {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 11.52px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.student-registration .password {
+  width: 384.1px;
+  padding: 13.44px 15.36px;
+  position: relative;
+  border-radius: 11.52px;
+  border: 0.96px solid;
+  border-color: #000000;
+  background: none;
+  margin-top: -0.96px;
+  font-family: "Noto Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 19.2px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.student-registration .login-bt-fp {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 11.52px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.student-registration .login {
+  display: flex;
+  width: 384.1px;
+  align-items: center;
+  justify-content: center;
+  gap: 9.6px;
+  padding: 13.44px 9.6px;
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: 11.52px;
+  background: linear-gradient(
+    91deg,
+    rgba(46, 76, 238, 1) 0%,
+    rgba(34, 30, 191, 1) 53%,
+    rgba(4, 15, 117, 1) 100%
+  );
+}
+
+.student-registration .text-wrapper-4 {
+  position: relative;
+  width: fit-content;
+  margin-top: -0.96px;
+  font-family: "Noto Sans-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 19.2px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.student-registration .other-logins {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 11.52px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.student-registration .or {
+  display: inline-flex;
+  align-items: center;
+  gap: 19.21px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.student-registration .line {
+  position: relative;
+  width: 163.24px;
+  height: 1.92px;
+}
+
+.student-registration .text-wrapper-5 {
+  position: relative;
+  width: fit-content;
+  margin-top: -0.96px;
+  font-family: "Noto Sans-Medium", Helvetica;
+  font-weight: 500;
+  color: #4d4d4d;
+  font-size: 15.4px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.student-registration .frame-4 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 17.28px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.student-registration .img {
+  position: relative;
+  width: 40.33px;
+  height: 40.33px;
+}
+
+.student-registration .frame-5 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7.68px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.student-registration .text-wrapper-6 {
+  position: relative;
+  width: fit-content;
+  margin-top: -0.96px;
+  font-family: "Noto Sans-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 15.4px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.student-registration .customer-care {
+  display: flex;
+  width: 384.1px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3.84px 5.76px;
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: 5.76px;
+  background: linear-gradient(
+    180deg,
+    rgba(98, 98, 98, 0) 0%,
+    rgba(98, 98, 98, 0.07) 100%
+  );
+}
+
+.student-registration .frame-6 {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 9.6px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.student-registration .text-wrapper-7 {
+  position: relative;
+  width: fit-content;
+  margin-top: -0.96px;
+  font-family: "Noto Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 15.4px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.student-registration .text-wrapper-8 {
+  position: absolute;
+  top: 206px;
+  left: 321px;
+  font-family: "Outfit-Regular", Helvetica;
+  font-weight: 400;
+  color: #090909;
+  font-size: 48.7px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+/* Original CSS code should be injected here */
+
+/* Additional styles for enhanced accessibility and semantics */
+.student-registration input[type="text"],
+.student-registration input[type="password"] {
+  width: 100%;
+  padding: 13.44px 15.36px;
+  border-radius: 11.52px;
+  border: 0.96px solid #000000;
+  background: none;
+  font-family: "Noto Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 19.2px;
+}
+
+.student-registration label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.student-registration .login {
+  cursor: pointer;
+  border: none;
+}
+
+.student-registration .frame-4 a {
+  display: inline-block;
+}
+
+.student-registration .frame-4 a:focus,
+.student-registration .frame-5 a:focus,
+.student-registration .customer-care a:focus {
+  outline: 2px solid #4a90e2;
+}
+
+.student-registration hr.line {
+  border: none;
+  height: 1.92px;
+  background-color: #000000;
+  width: 163.24px;
+}
+
+@media (max-width: 768px) {
+  .student-registration .div {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .student-registration .frame {
+    width: 100%;
+    left: 0;
+    top: 0;
+    margin-top: 20px;
+  }
+
+  .student-registration .frame-2 {
+    left: 0;
+    top: 0;
+    padding: 20px;
+  }
+
+  .student-registration .div-wrapper,
+  .student-registration .password,
+  .student-registration .login {
+    width: 100%;
+  }
+}
