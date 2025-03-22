@@ -1,91 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Login - College Buzz</title>
-    <link rel="stylesheet" href="globals.css" />
-    <link rel="stylesheet" href="css/student_login.css" />
-  </head>
-  <body>
-    <main class="student-login">
-      <div class="div">
-        <h1 class="text-wrapper">Student Login</h1>
-        <h2 class="text-wrapper-2">College Buzz</h2>
-        <section class="frame">
-          <div class="frame-2">
-            <div class="frame-3">
-              <div class="upper-section">
-                <header class="login-text">
-                  <h3 class="text-wrapper-3">Login</h3>
-                  <p class="text-wrapper-4">Glad you're back!</p>
-                </header>
-                <form class="credentials">
-                  <div class="username">
-                    <label for="username" class="visually-hidden">Username</label>
-                    <input
-                      type="text"
-                      id="username"
-                      name="username"
-                      placeholder="Username"
-                      class="text-wrapper-5"
-                      required
-                    />
-                  </div>
-                  <div class="password-rem">
-                    <div class="password">
-                      <label for="password" class="visually-hidden">Password</label>
-                      <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        placeholder="Password"
-                        class="text-wrapper-5"
-                        required
-                      />
-                      
-                    </div>
-                    <div class="remember">
-                      <input type="checkbox" id="remember-me" name="remember-me" class="img" />
-                      <label for="remember-me" class="text-wrapper-6">Remember me</label>
-                    </div>
-                  </div>
-                  <div class="login-bt-fp">
-                    <button type="submit" class="login"><span class="text-wrapper-7">Login</span></button>
-                    <a href="#" class="text-wrapper-4">Forgot password?</a>
-                  </div>
-                </form>
-              </div>
-              <div class="other-logins">
-                <div class="or">
-                  <hr class="line" />
-                  <span class="text-wrapper-8">Or</span>
-                  <hr class="line" />
-                </div>
-                <div class="frame-4">
-                  <a href="#" aria-label="Login with Google">
-                    <img class="img-2" src="img/devicon-google.svg" alt="Google logo" />
-                  </a>
-                  <a href="#" aria-label="Login with Facebook">
-                    <img class="img-2" src="img/logos-facebook.svg" alt="Facebook logo" />
-                  </a>
-                  <a href="#" aria-label="Login with GitHub">
-                    <img class="img-2" src="img/bi-github.svg" alt="GitHub logo" />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <footer class="frame-5">
-              <p class="text-wrapper-6">Don't have an account? <a href="student_signup.html">Signup</a></p>
-              <nav class="customer-care">
-                <a href="#" class="div-wrapper"><span class="text-wrapper-9">Terms &amp; Conditions</span></a>
-                <a href="#" class="div-wrapper"><span class="text-wrapper-9">Support</span></a>
-                <a href="#" class="div-wrapper"><span class="text-wrapper-9">Customer Care</span></a>
-              </nav>
-            </footer>
-          </div>
-        </section>
-      </div>
-    </main>
-  </body>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f2f5;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .login-container h1, .login-container h2 {
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .login-container .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(91deg, #628eff 0%, #8740cd 53%, #580475 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .login-container .forgot-link {
+            display: block;
+            margin-top: 10px;
+            color: #4a90e2;
+            text-decoration: none;
+        }
+        .other-logins img {
+            width: 40px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .signup-link, .customer-care a {
+            color: #4a90e2;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Student Login</h1>
+        <h2>College Buzz</h2>
+        <form>
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        <a href="#" class="forgot-link">Forgot password?</a>
+        <div class="other-logins">
+            <img src="img/google.png" alt="Google">
+            <img src="img/facebook.png" alt="Facebook">
+            <img src="img/github.png" alt="GitHub"> <!-- Corrected reference -->
+        </div>
+        <p>Don't have an account? <a href="student_signup.html" class="signup-link">Signup</a></p>
+        <div class="customer-care">
+            <a href="#">Terms & Conditions</a> | 
+            <a href="#">Support</a> | 
+            <a href="#">Customer Care</a>
+        </div>
+    </div>
+</body>
 </html>
