@@ -1,174 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>College Registration</title>
-    <style>
-      body,
-      html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        font-family: "Outfit", sans-serif;
-        line-height: 1.6;
-        color: #000000;
-        background-color: #ffffff;
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Registration</title>
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: "Outfit", sans-serif;
+      line-height: 1.6;
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1,
+    h2 {
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #000000;
+      border-radius: 5px;
+      background-color: #f4f4f4;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #4caf50;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #45a049;
+    }
+
+    .checkbox-group {
+      margin-top: 20px;
+    }
+
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>College Buzz</h1>
+      <h2>College Registration</h2>
+    </header>
+    <main>
+      <form id="college-registration-form" autocomplete="off">
+        <div class="form-group">
+          <label for="college-name">College Name:</label>
+          <input type="text" id="college-name" name="college-name" required pattern="[A-Za-z0-9\s]{3,}"
+            title="Only letters, numbers, and spaces allowed">
+          <span class="error" id="college-name-error">Invalid college name</span>
+        </div>
+
+        <div class="form-group">
+          <label for="college-email">College Email Address:</label>
+          <input type="email" id="college-email" name="college-email" required>
+          <span class="error" id="college-email-error">Invalid email format</span>
+        </div>
+
+        <div class="form-group">
+          <label for="phone-number">Phone Number:</label>
+          <input type="tel" id="phone-number" name="phone-number" required pattern="[0-9]{10}"
+            title="Enter a valid 10-digit phone number">
+          <span class="error" id="phone-number-error">Invalid phone number</span>
+        </div>
+
+        <div class="form-group">
+          <label for="admin-email">Admin Email:</label>
+          <input type="email" id="admin-email" name="admin-email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="create-password">Create Password:</label>
+          <input type="password" id="create-password" name="create-password" required
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}"
+            title="Must contain at least 8 characters, one uppercase, one lowercase, one number, and one special character (@#$%^&+=)">
+          <span class="error" id="password-error">Weak password</span>
+        </div>
+
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password:</label>
+          <input type="password" id="confirm-password" name="confirm-password" required>
+          <span class="error" id="confirm-password-error">Passwords do not match</span>
+        </div>
+
+        <div class="form-group">
+          <label for="college-logo">College ID (Max: 2MB):</label>
+          <input type="file" id="college-logo" name="college-logo" accept="image/*" required>
+          <span class="error" id="file-error">File size exceeds 2MB</span>
+        </div>
+
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" id="terms-conditions" name="terms-conditions" required>
+            I agree to the Terms & Conditions and Privacy Policy.
+          </label>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn">Submit</button>
+        </div>
+      </form>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById("college-registration-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      let isValid = true;
+      const password = document.getElementById("create-password").value;
+      const confirmPassword = document.getElementById("confirm-password").value;
+
+      // 🔹 Password validation
+      if (password !== confirmPassword) {
+        document.getElementById("confirm-password-error").style.display = "block";
+        isValid = false;
+      } else {
+        document.getElementById("confirm-password-error").style.display = "none";
       }
-      .container {
-        max-width: 1120px;
-        margin: 0 auto;
-        padding: 20px;
-      }
-      h1,
-      h2 {
-        text-align: center;
-      }
-      .form-group {
-        margin-bottom: 20px;
-      }
-      label {
-        display: block;
-        margin-bottom: 5px;
-      }
-      input[type="text"],
-      input[type="email"],
-      input[type="password"],
-      input[type="tel"],
-      input[type="url"] {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #000000;
-        border-radius: 33.25px;
-        background-color: #d9d9d9;
-      }
-      .btn {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #4caf4f;
-        color: #000000;
-        text-decoration: none;
-        border-radius: 37.36px;
-        opacity: 0.7;
-        font-size: 18px;
-        border: none;
-        cursor: pointer;
-      }
-      .file-upload {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #d9d9d9;
-        border-radius: 19.95px;
-        cursor: pointer;
-      }
-      .checkbox-group {
-        margin-top: 20px;
-      }
-      .checkbox-group label {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-      }
-      .checkbox-group input[type="checkbox"] {
-        margin-right: 10px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <header>
-        <h1>College Buzz</h1>
-        <h2>College Registration</h2>
-      </header>
-      <main>
-        <form id="college-registration-form">
-          <div class="form-group">
-            <label for="college-name">College name:</label>
-            <input type="text" id="college-name" name="college-name" required />
-          </div>
-          <div class="form-group">
-            <label for="college-code">College Code:</label>
-            <input type="text" id="college-code" name="college-code" required />
-          </div>
-          <div class="form-group">
-            <label for="university-name">University Name:</label>
-            <input type="text" id="university-name" name="university-name" required />
-          </div>
-          <div class="form-group">
-            <label for="college-type">College Type:</label>
-            <input type="text" id="college-type" name="college-type" required />
-          </div>
-          <div class="form-group">
-            <label for="college-logo">College Logo:</label>
-            <input type="file" id="college-logo" name="college-logo" accept="image/*" class="file-upload" />
-          </div>
-          <div class="form-group">
-            <label for="college-address">College Address:</label>
-            <input type="text" id="college-address" name="college-address" required />
-          </div>
-          <div class="form-group">
-            <label for="college-email">College Email Address:</label>
-            <input type="email" id="college-email" name="college-email" required />
-          </div>
-          <div class="form-group">
-            <label for="phone-number">Phone Number:</label>
-            <input type="tel" id="phone-number" name="phone-number" required />
-          </div>
-          <div class="form-group">
-            <label for="website-url">Website URL:</label>
-            <input type="url" id="website-url" name="website-url" required />
-          </div>
-          <div class="form-group">
-            <label for="admin-name">Admin Name:</label>
-            <input type="text" id="admin-name" name="admin-name" required />
-          </div>
-          <div class="form-group">
-            <label for="admin-email">Admin email:</label>
-            <input type="email" id="admin-email" name="admin-email" required />
-          </div>
-          <div class="form-group">
-            <label for="create-password">Create Password:</label>
-            <input type="password" id="create-password" name="create-password" required />
-          </div>
-          <div class="form-group">
-            <label for="confirm-password">Confirm Password:</label>
-            <input type="password" id="confirm-password" name="confirm-password" required />
-          </div>
-          <div class="form-group">
-            <label for="college-id-proof">College ID Proof:</label>
-            <input
-              type="file"
-              id="college-id-proof"
-              name="college-id-proof"
-              accept=".pdf,.doc,.docx,image/*"
-              class="file-upload"
-            />
-            <p>Upload field for registration certificate, NOC, or affiliation proof</p>
-          </div>
-          <div class="checkbox-group">
-            <label>
-              <input type="checkbox" id="authorized-representative" name="authorized-representative" required />
-              I confirm that I am an authorized representative of this institution.
-            </label>
-            <label>
-              <input type="checkbox" id="terms-conditions" name="terms-conditions" required />
-              I agree to the Terms & Conditions and Privacy Policy of College Buzz.
-            </label>
-          </div>
-          <div class="form-group">
-        <button type="submit" class="btn">Submit</button>
-          </div>
-        </form>
-      </main>
-    </div>
-    <script>
-      document.getElementById("college-registration-form").addEventListener("submit", function (event) {
-        event.preventDefault();
-        // Here you would typically send the form data to a server
-        console.log("Form submitted");
-        // Redirect to admin login page after form submission
-        window.location.href = "adminlogin.html";
-      });
-    </script>
-  </body>
+
+      if (!isValid) return;
+
+      // 🔹 Collect Form Data
+      const formData = {
+        college_name: document.getElementById("college-name").value,
+        college_email: document.getElementById("college-email").value,
+        phone_number: document.getElementById("phone-number").value,
+        admin_email: document.getElementById("admin-email").value,
+        create_password: password
+      };
+
+      // 🔹 Send Data to Backend
+      fetch("http://localhost:5000/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            alert("✅ Registration successful!");
+            window.location.href = "adminlogin.html"; // Redirect to login
+          } else {
+            alert("❌ Error: " + data.message);
+          }
+        })
+        .catch(error => console.error("❌ Error submitting form:", error));
+    });
+  </script>
+</body>
+
 </html>
