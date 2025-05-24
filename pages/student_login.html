@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login - College Buzz</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f2f5;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-container h1,
+        .login-container h2 {
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .login-container .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(91deg, #628eff 0%, #8740cd 53%, #580475 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .login-container .forgot-link {
+            display: block;
+            margin-top: 10px;
+            color: #4a90e2;
+            text-decoration: none;
+        }
+
+        .other-logins img {
+            width: 40px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .signup-link,
+        .customer-care a {
+            color: #4a90e2;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <h1>Student Login</h1>
+        <h2>College Buzz</h2>
+        <form id="loginForm">
+            <input type="text" id="email" placeholder="Email" required>
+            <input type="text" id="phone" placeholder="Phone Number" required>
+            <button type="submit" class="login-btn">Continue</button>
+        </form>
+        <br>
+    </div>
+
+    <script>
+        // Handle form submission
+        document.getElementById("loginForm").addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            // Get form data
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+
+            if (!email || !phone) {
+                alert("Email and phone are required!");
+                return;
+            }
+
+            // Send data to the backend
+            try {
+                const response = await fetch("http://localhost:5000/submit-student-login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ email, phone })
+                });
+
+                const data = await response.json();
+                if (data.success) {
+                    alert("Login successful!");
+                    // Redirect or show further steps
+                    window.location.href = "mainpage.html";  // This will redirect to mainpage.html
+
+                } else {
+                    alert(data.message || "Login failed.");
+                }
+            } catch (error) {
+                console.error("Error submitting form:", error);
+                alert("An error occurred. Please try again.");
+            }
+        });
+    </script>
+</body>
+
+</html>

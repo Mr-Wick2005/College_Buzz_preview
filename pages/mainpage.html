@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>College Buzz</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="brand">College Buzz</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <!-- <nav class="nav-tabs desktop">
+    <a href="category.html?category=sports">SPORTS</a>
+    <a href="category.html?category=cultural">CULTURAL</a>
+    <a href="category.html?category=technical">TECHNICAL</a>
+    <a href="category.html?category=workshops">WORKSHOPS</a>
+    <a href="category.html?category=achievements">ACHIEVEMENTS</a>
+  </nav> -->
+
+  <!-- <nav class="nav-tabs mobile" id="mobileMenu">
+    <a href="category.html?category=sports">SPORTS</a>
+    <a href="category.html?category=cultural">CULTURAL</a>
+    <a href="category.html?category=technical">TECHNICAL</a>
+    <a href="category.html?category=workshops">WORKSHOPS</a>
+    <a href="category.html?category=achievements">ACHIEVEMENTS</a>
+  </nav> -->
+
+
+  <section class="banner">
+    <p>
+      • Padmabhushan Vasantdada Patil Pratishthan's College of Engineering (pvpp) •
+      Veermata Jijabai Technological Institute (VJTI) • Thadomal Shahani Engineering College (TSEC) • Sardar Patel
+      College of Engineering (SPCE) • Institute of Chemical Technology (ICT) • A.C. Patil College of Engineering •
+      Atharva College of Engineering (ACE) • Bharati Vidyapeeth College of Engineering • Datta Meghe College of
+      Engineering • Don Bosco Institute of Technology • Dwarkadas J. Sanghvi College of Engineering • KC College of
+      Engineering • K.J. Somaiya College of Engineering • K. J. Somaiya Institute of Engineering and Information
+      Technology • Lokmanya Tilak College of Engineering • G.M.Vedak Institute of Technology • Ramrao Adik Institute of
+      Technology • Shah and Anchor Kutchhi
+      Engineering College • SIES Graduate School of Technology • Fr. Conceicao Rodrigues College of Engineering • Fr.
+      Conceicao Rodrigues Institute of Technology • Konkan Gyaanpeeth's College of Engineering • Rizvi College of
+      Engineering • St. John College of Engineering & Technology •
+
+    </p>
+  </section>
+
+  <main>
+    <h2 class="recent-title">RECENT</h2>
+    <div class="cards-grid" id="posterContainer">
+      <!-- Posters will be injected here -->
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal" id="posterModal">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+      <img id="modalImg" src="https://via.placeholder.com/400x400?text=Poster" alt="Poster Preview">
+      <div id="posterInfo"
+        style="white-space: pre-wrap; text-align: left; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; min-height: 100px;">
+        Information about this poster...</div>
+    </div>
+  </div>
+  <div id="showingCount" class="showing-count"></div>
+  <div id="posterContainer" class="poster-grid"></div>
+  <div id="paginationControls" class="pagination"></div>
+
+
+  <div class="overlay" id="overlay" onclick="closeAllModals()"></div>
+
+  <footer style="background-color: #263238; color: #fff; padding: 40px 0; font-family: Arial, sans-serif;">
+    <div
+      style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; padding: 0 20px;">
+z
+      <!-- About -->
+      <div style="flex: 1 1 200px; margin-bottom: 20px;">
+        <h3>College Buzz</h3>
+        <p>Your one-stop platform for all college events, fests, and opportunities. Stay updated. Stay connected.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div style="flex: 1 1 200px; margin-bottom: 20px;">
+        <h4>Quick Info</h4>
+        <ul>
+          <li><a onclick="showModal('blog')">Blog</a></li>
+          <li><a onclick="showModal('contact')">Contact</a></li>
+          <li><a onclick="showModal('pricing')">Pricing</a></li>
+          <li><a onclick="showModal('testimonials')">Terms and Conditions</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div style="flex: 1 1 200px; margin-bottom: 20px;">
+        <h4>Contact Info</h4>
+        <p>Email: support@collegebuzz.com</p>
+        <p>Phone: +91-998760XXXX</p>
+        <p>Location: Mumbai, Maharashtra, India</p>
+      </div>
+
+      <!-- Social Icons -->
+      <div style="flex: 1 1 200px; margin-bottom: 20px;">
+        <h4>Follow Us</h4>
+        <a href="https://www.instagram.com/"
+          style="margin-right: 10px; color: #ccc; text-decoration: none;">Instagram</a>
+        <a href="https://www.LinkedIn.com/" style="margin-right: 10px; color: #ccc; text-decoration: none;">LinkedIn</a>
+        <a href="https://www.GitHub.com/" style="color: #ccc; text-decoration: none;">GitHub</a>
+      </div>
+    </div>
+
+    <hr style="border-color: #444; margin: 20px auto; width: 90%;" />
+
+    <div style="text-align: center; font-size: 14px; color: #aaa;">
+      &copy; 2025 College Buzz. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Modals -->
+  <div id="blog" class="modal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-modal" onclick="hideModal('blog')">&times;</span>
+      <h2>College Buzz Blog</h2>
+      <p>Welcome to our blog! Stay tuned for the latest stories, event highlights, and success journeys from colleges
+        across India.</p>
+
+      <h4>Latest Posts</h4>
+      <ul>
+        <li><strong>🌟 Top 5 College Fests in India You Must Attend</strong><br><small>Published on April 10,
+            2025</small></li>
+        <li><strong>🚀 How Student-Driven Events Shape Future Careers</strong><br><small>Published on March 25,
+            2025</small></li>
+        <li><strong>🎯 Tips to Boost Participation in Campus Activities</strong><br><small>Published on March 5,
+            2025</small></li>
+      </ul>
+
+      <p>Have something to share? <strong>Email us</strong> your story at <a
+          href="mailto:blog@collegebuzz.com">blog@collegebuzz.com</a></p>
+
+    </div>
+  </div>
+
+  <div id="contact" class="modal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-modal" onclick="hideModal('contact')">&times;</span>
+      <h2>Contact Us</h2>
+      <p>We’re here to help you with anything related to College Buzz. Feel free to reach out!</p>
+
+      <h4>📧 Email</h4>
+      <p>support@collegebuzz.com</p>
+
+      <h4>📱 WhatsApp</h4>
+      <p>+91-9987XXXXXX</p>
+
+      <h4>📞 Support Team</h4>
+      <p>Call us at +91-9999888877</p>
+
+      <p>Available: Monday to Saturday, 10 AM – 6 PM</p>
+
+    </div>
+  </div>
+
+  <div id="pricing" class="modal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-modal" onclick="hideModal('pricing')">&times;</span>
+      <h2>Pricing (For Colleges)</h2>
+      <p>Choose the right plan for your college to showcase events and achievements on College Buzz.</p>
+
+      <h4>🟢 Basic Plan – ₹0/month</h4>
+      <ul>
+        <li>Create a college profile</li>
+        <li>Post up to 5 events</li>
+        <li>Limited visibility in search</li>
+        <li>Email support</li>
+      </ul>
+
+      <h4>🟡 Standard Plan – ₹499/month</h4>
+      <ul>
+        <li>Unlimited event postings</li>
+        <li>Priority listing on homepage</li>
+        <li>Poster/image uploads</li>
+        <li>Custom event categories</li>
+        <li>Email & Chat support</li>
+      </ul>
+
+      <h4>🔵 Premium Plan – ₹999/month</h4>
+      <ul>
+        <li>All features of Standard Plan</li>
+        <li>Dedicated college dashboard</li>
+        <li>Advanced analytics & reports</li>
+        <li>Featured college badge</li>
+        <li>Social media promotion</li>
+        <li>Priority support</li>
+      </ul>
+
+      <p><strong>Note:</strong> Annual plans available at discounted rates. Contact us to know more.</p>
+
+    </div>
+  </div>
+
+  <div id="testimonials" class="modal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-modal" onclick="hideModal('testimonials')">&times;</span>
+      <h2>Terms and Conditions</h2>
+      <p>By registering and using College Buzz, you agree to the following terms and conditions:</p>
+
+      <ul>
+        <li><strong>Eligibility:</strong> Only officially recognized colleges and institutions can register and upload
+          events.</li>
+        <li><strong>Content Responsibility:</strong> Colleges are responsible for the accuracy and appropriateness of
+          all uploaded posters and event information.</li>
+        <li><strong>Usage Rights:</strong> College Buzz reserves the right to feature your events on our homepage or
+          promotional material.</li>
+        <li><strong>Data Privacy:</strong> All personal data collected during registration and poster uploads is stored
+          securely and used solely for platform functionality.</li>
+        <li><strong>Termination:</strong> College Buzz reserves the right to suspend any account that violates our
+          policies or uploads inappropriate content.</li>
+      </ul>
+
+      <p>If you have any questions regarding these terms, feel free to contact our support team at
+        <strong>support@collegebuzz.com</strong>
+      </p>
+
+    </div>
+  </div>
+
+
+
+  <script src="javascript/main.js"></script>
+</body>
+
+</html>

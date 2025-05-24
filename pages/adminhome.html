@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Home - College Buzz</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>College Buzz</h2>
+    <a href="mainpage.html">📊 Main Page</a>
+    <div style="position: relative;">
+      <a href="javascript:void(0);" onclick="toggleSettings()">⚙️ Settings</a>
+      <div id="settingsDropdown" style="display: none; margin-left: 1rem; margin-top: 0.5rem;">
+        <div>
+          <label style="font-size: 0.9rem;">
+            🌓 Dark Mode:
+            <input type="checkbox" id="themeToggle" onchange="toggleTheme()" />
+          </label>
+        </div>
+        <!-- <div>
+          <a href="#" style="font-size: 0.9rem; text-decoration: underline;">📨 Contact Us</a>
+        </div> -->
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="top-bar">
+      <h3>Posters</h3>
+      <div style="display: flex; align-items: center; width: 60%;">
+        <div class="search-box">
+          🔍 <input type="text" id="searchInput" placeholder="Search here" oninput="filterPosters()" />
+        </div>
+        <button class="new-poster-btn" onclick="openModal()">➕ New Poster</button>
+
+        <div class="user-info">
+          <label for="profilePicInput">
+            <img id="profilePic" src="https://via.placeholder.com/32" style="cursor:pointer; border-radius: 50%;" />
+          </label>
+          <input type="file" id="profilePicInput" accept="image/*" style="display:none" />
+        
+          <input type="text" id="adminName" value="Admin"
+            style="border:none; background:transparent; font-weight:bold; width: 100px;" readonly />
+          <!-- <button onclick="toggleEdit()">✏️</button> -->
+          <button onclick="resetData()">🔄 Reset Profile</button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="pagination-bar">
+      <div class="showing-count" id="showingCount">Showing 0–0 of 0</div>
+      <div class="pagination">
+        <!-- Pagination buttons will be rendered here dynamically -->
+      </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal" id="posterModal">
+      <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <h3>Upload New Poster</h3>
+        <input type="text" id="posterTitleInput" placeholder="Enter event title" />
+        <select id="posterCategoryInput" required style="margin-top: 1rem; width: 100%; padding: 0.5rem;">
+          <option value="" disabled selected>Select event category</option>
+          <option value="Sports">Sports</option>
+          <option value="Cultural">Cultural</option>
+          <option value="Technical">Technical</option>
+          <option value="Workshops">Workshops</option>
+          <option value="Achievements">Achievements</option>
+        </select>
+
+
+        <textarea id="posterDeetsInput" placeholder="Enter event details" rows="4"
+          style="resize: vertical; width: 100%; margin-top: 1rem;"></textarea>
+        <input type="file" id="posterImageInput" accept="image/*" />
+        <button class="new-poster-btn" onclick="addPoster()">Upload</button>
+      </div>
+    </div>
+
+    <!-- Add this modal at the end of body -->
+    <div class="modal" id="previewModal">
+      <div class="modal-content" style="max-width: 600px; padding: 1rem;">
+        <span class="close-modal" onclick="closePreviewModal()">&times;</span>
+        <img id="previewImage" src="" alt="" style="width: 100%; max-height: 400px; object-fit: contain;" />
+        <h3 id="previewTitle" style="margin-top: 1rem;"></h3>
+        <p id="previewDescription" style="color: #555;"></p>
+      </div>
+    </div>
+
+    <!-- Custom Confirmation Modal -->
+    <div class="modal" id="confirmationModal">
+      <div class="modal-content" style="max-width: 400px; text-align: left;">
+        <span class="close-modal" onclick="closeConfirmationModal()">&times;</span>
+        <p>Are you sure? <br><small>(Contact us to <a href="https://forms.gle/X452VKbRnwdgHUkTA"
+              style="color: #6f3fc2; text-decoration: underline;">edit form</a>)</small></p>
+        <div style="margin-top: 1rem; display: flex; justify-content: flex-end; gap: 0.5rem;">
+          <button onclick="confirmUpload()"
+            style="background: #6f3fc2; color: #fff; padding: 0.4rem 0.8rem; border: none; border-radius: 5px;">OK</button>
+          <button onclick="closeConfirmationModal()"
+            style="background: #ccc; color: #333; padding: 0.4rem 0.8rem; border: none; border-radius: 5px;">Cancel</button>
+        </div>
+      </div>
+    </div>
+    
+    <div id="posterGrid"></div>
+
+    <script src="javascript/script.js"></script>
+</body>
+
+</html>
